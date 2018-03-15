@@ -5,7 +5,7 @@ import Model.Catalog;
 
 public class PlayCommand extends Command {
     String args[]=new String[10];
-    public PlayCommand(Catalog catalog, String command)
+    public PlayCommand(String command)
     {
         super("");
     }

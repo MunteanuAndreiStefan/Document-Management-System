@@ -5,7 +5,7 @@ import Model.Catalog;
 
 public class LoadCommand extends Command {
     String args[]=new String[10];
-    public LoadCommand(Catalog catalog, String command)
+    public LoadCommand(String command)
     {
         super("");
     }
