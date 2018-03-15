@@ -6,6 +6,13 @@ public abstract class Command {
     protected String command;
     protected int commandSize;
 
+    public Vector<String> getArgs(String commandLine) {
+        Vector<String> splitCommands = new Vector<String>();
+        for (String retval : commandLine.split("\"")) {
+            splitCommands.addElement(retval);
+        }
+        return splitCommands;
+    }
     public Command(String command){
         this.command=command;
         commandSize=getCommandSize(command);

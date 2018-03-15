@@ -15,7 +15,7 @@ public class Shell {
 
     public String getCommand(String commandLine) {
         Vector<String> splitCommands = new Vector<String>();
-        for (String retval : commandLine.split(" ", 2)) {
+        for (String retval : commandLine.split("\"", 2)) {
             splitCommands.addElement(retval);
         }
         return splitCommands.elementAt(0);

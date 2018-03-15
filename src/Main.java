@@ -22,7 +22,7 @@ public class Main {
 
         catalog.list();
 
-        //sg.open();
+        sg.open();
 
         System.out.print(sg.getMetaData());
 
