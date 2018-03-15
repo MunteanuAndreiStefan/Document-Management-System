@@ -1,5 +1,8 @@
 package Controller;
 
+import Commands.*;
+import Model.Catalog;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,6 +11,7 @@ import java.util.Vector;
 public class Shell {
 
     private String commandLine = "";
+    private Catalog catalog=Catalog.getInstance();
 
     public String getCommand(String commandLine) {
         Vector<String> splitCommands = new Vector<String>();
@@ -27,6 +31,7 @@ public class Shell {
     }
 
     public Shell() {
+
         while (true) {
             // read the command
             System.out.print("Shell> ");
@@ -41,10 +46,31 @@ public class Shell {
                 continue;
 
             //Example
-            if (getCommand(commandLine).equals("exit")) {
+            else if (getCommand(commandLine).equals("exit")) {
                 System.out.println("...Terminating Shell");
                 System.exit(0);
             }
+            else if (getCommand(commandLine).equals("add")) {
+                AddCommand command= new AddCommand(catalog, this.commandLine);
+                command.executeCommand();
+            }
+            else if (getCommand(commandLine).equals("list")) {
+                ListCommand command= new ListCommand(catalog, this.commandLine);
+                command.executeCommand();
+            }
+            else if (getCommand(commandLine).equals("save")) {
+                ListCommand command= new ListCommand(catalog, this.commandLine);
+                command.executeCommand();
+            }
+            else if (getCommand(commandLine).equals("play")) {
+                PlayCommand command= new PlayCommand(catalog, this.commandLine);
+                command.executeCommand();
+            }
+            else if (getCommand(commandLine).equals("load")) {
+                LoadCommand command= new LoadCommand(catalog, this.commandLine);
+                command.executeCommand();
+            }
+
         }
 
     }

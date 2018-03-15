@@ -11,7 +11,7 @@ public abstract class Command {
         commandSize=getCommandSize(command);
     }
 
-    abstract void executeCommand();
+    public abstract void executeCommand();
 
 
     public int getCommandSize(String command) {
