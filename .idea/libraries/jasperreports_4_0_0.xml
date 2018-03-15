@@ -6,6 +6,9 @@
       <root url="jar://$PROJECT_DIR$/src/dynamicreports-adhoc-3.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/dynamicreports-core-3.1.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/dynamicreports-adhoc-3.1.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

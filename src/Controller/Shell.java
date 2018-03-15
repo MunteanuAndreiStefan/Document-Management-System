@@ -11,7 +11,7 @@ import java.util.Vector;
 public class Shell {
 
     private String commandLine = "";
-    private Catalog catalog=Catalog.getInstance();
+    private Catalog catalog;
 
     public String getCommand(String commandLine) {
         Vector<String> splitCommands = new Vector<String>();
@@ -30,7 +30,8 @@ public class Shell {
         return command;
     }
 
-    public Shell() {
+    public Shell(Catalog cat) {
+        catalog = cat;
 
         while (true) {
             // read the command

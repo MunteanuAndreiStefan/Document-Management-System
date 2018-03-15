@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Catalog catalog = Catalog.getInstance();
+        Catalog catalog = new Catalog();
         Song sg = new Song("song1", "/home/stefan/IdeaProjects/Document-Management-System/src/song.mp3", 2016);
 
         //sg.open();
@@ -28,9 +28,9 @@ public class Main {
 
         catalog.save("catalog1.dat");
 
-        Shell sh = new Shell();
-
         Report a = new Report();
+
+        //Shell sh = new Shell();
 
 
     }

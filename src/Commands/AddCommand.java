@@ -9,8 +9,8 @@ public class AddCommand extends Command {
     }
 
     @Override
-    public void executeCommand() {
-        Catalog.getInstance().list();
+    public void executeCommand(Catalog cat) {
+        cat.list();
     }
 
 }

@@ -5,18 +5,10 @@ import java.util.*;
 
 public class Catalog implements Serializable  {
 
-    private static Catalog instance = null;
-
-    public static Catalog getInstance(){
-        if(instance == null) {
-            instance = new Catalog();
-        }
-        return instance;
-    }
 
     private Map<String,Item> items;
 
-    protected Catalog() {
+    public Catalog() {
         this.items = new LinkedHashMap<String,Item>();
     }
 

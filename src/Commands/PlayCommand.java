@@ -9,7 +9,7 @@ public class PlayCommand extends Command {
         super("");
     }
     @Override
-    public void executeCommand() {
-        Catalog.getInstance().list();
+    public void executeCommand(Catalog cat) {
+        cat.list();
     }
 }
