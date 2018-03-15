@@ -12,6 +12,7 @@ public abstract class Command {
         for (String retval : commandLine.split("\"")) {
             splitCommands.addElement(retval);
         }
+
         return splitCommands;
     }
     public Command(String command){
@@ -19,7 +20,7 @@ public abstract class Command {
         commandSize=getCommandSize(command);
     }
 
-    public abstract void executeCommand(Catalog cat);
+    public abstract void executeCommand();
 
 
     public int getCommandSize(String command) {

@@ -10,18 +10,20 @@ public class AddCommand extends Command {
 
     public Vector<String> args= new Vector<String>();
     Catalog catalog;
-    public AddCommand(String command) {
+    public AddCommand(Catalog catalog, String command) {
         super("add");
+        this.catalog = catalog;
         this.catalog=catalog;
         this.args=getArgs(command);
+
+
         System.out.println(command);
 
 
     }
 
     @Override
-    public void executeCommand(Catalog cat) {
-        catalog=cat;
+    public void executeCommand() {
         Item item;
         item=new Item() {
             @Override

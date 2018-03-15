@@ -3,14 +3,21 @@ package Commands;
 import Controller.Command;
 import Model.Catalog;
 
+import java.util.Vector;
+
 public class LoadCommand extends Command {
-    String args[]=new String[10];
-    public LoadCommand(String command)
+    Vector<String> args;
+    Catalog catalog;
+    public LoadCommand(Catalog catalog, String command)
     {
         super("");
+        this.catalog=catalog;
+        this.args=getArgs(command);
     }
+
     @Override
-    public void executeCommand(Catalog cat) {
-        cat.list();
+    public void executeCommand()
+    {
+        catalog.save(args.get(1));
     }
 }

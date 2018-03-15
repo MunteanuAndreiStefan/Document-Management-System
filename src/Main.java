@@ -28,9 +28,13 @@ public class Main {
 
         catalog.save("catalog1.dat");
 
-        Report a = new Report();
+        //Report a = new Report();
 
-        //Shell sh = new Shell();
+        try {
+            Shell sh = new Shell(catalog);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }

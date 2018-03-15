@@ -42,34 +42,38 @@ public class Shell {
                 e.printStackTrace();
             }
 
-            // if just a return, loop
-            if (commandLine.equals(""))
-                continue;
+            try {
+                // if just a return, loop
+                if (commandLine.equals(""))
+                    continue;
 
-            //Example
-            else if (getCommand(commandLine).equals("exit")) {
-                System.out.println("...Terminating Shell");
-                System.exit(0);
-            }
-            else if (getCommand(commandLine).equals("add")) {
-                AddCommand command= new AddCommand(this.commandLine);
-                command.executeCommand(catalog);
-            }
-            else if (getCommand(commandLine).equals("list")) {
-                ListCommand command= new ListCommand(this.commandLine);
-                command.executeCommand(catalog);
-            }
-            else if (getCommand(commandLine).equals("save")) {
-                ListCommand command= new ListCommand(this.commandLine);
-                command.executeCommand(catalog);
-            }
-            else if (getCommand(commandLine).equals("play")) {
-                PlayCommand command= new PlayCommand(this.commandLine);
-                command.executeCommand(catalog);
-            }
-            else if (getCommand(commandLine).equals("load")) {
-                LoadCommand command= new LoadCommand(this.commandLine);
-                command.executeCommand(catalog);
+                //Example
+                else if (getCommand(commandLine).equals("exit")) {
+                    System.out.println("...Terminating Shell");
+                    System.exit(0);
+                }
+                else if (getCommand(commandLine).equals("add")) {
+                    AddCommand command= new AddCommand(catalog, this.commandLine);
+                    command.executeCommand();
+                }
+                else if (getCommand(commandLine).equals("list")) {
+                    ListCommand command= new ListCommand(catalog, this.commandLine);
+                    command.executeCommand();
+                }
+                else if (getCommand(commandLine).equals("save")) {
+                    SaveCommand command= new SaveCommand(catalog, this.commandLine);
+                    command.executeCommand();
+                }
+                else if (getCommand(commandLine).equals("play")) {
+                    PlayCommand command= new PlayCommand(catalog, this.commandLine);
+                    command.executeCommand();
+                }
+                else if (getCommand(commandLine).equals("load")) {
+                    LoadCommand command= new LoadCommand(catalog, this.commandLine);
+                    command.executeCommand();
+                }
+            } catch (Exception e) {
+
             }
 
         }
