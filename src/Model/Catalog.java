@@ -41,6 +41,15 @@ public class Catalog implements Serializable  {
         return null;
     }
 
+    public void remove(String toSearch){
+        if(contains(toSearch))
+            items.remove(toSearch);
+    }
+
+    public void clear(String toSearch){
+        items.clear();
+    }
+
     public void save(String path) {
         try {
             FileOutputStream fout = new FileOutputStream(path);
