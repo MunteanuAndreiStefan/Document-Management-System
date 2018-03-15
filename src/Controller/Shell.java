@@ -63,13 +63,12 @@ public class Shell {
                 else if (getCommand(commandLine).equals("save")) {
                     SaveCommand command= new SaveCommand(catalog, this.commandLine);
                     command.executeCommand();
-                }
-                else if (getCommand(commandLine).equals("play")) {
-                    PlayCommand command= new PlayCommand(catalog, this.commandLine);
+                } else if (getCommand(commandLine).equals("play")) {
+
+                    PlayCommand command = new PlayCommand(catalog, this.commandLine);
                     command.executeCommand();
-                }
-                else if (getCommand(commandLine).equals("load")) {
-                    LoadCommand command= new LoadCommand(catalog, this.commandLine);
+                } else if (getCommand(commandLine).equals("load")) {
+                    LoadCommand command = new LoadCommand(catalog, this.commandLine);
                     command.executeCommand();
                 }
             } catch (Exception e) {
