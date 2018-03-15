@@ -53,23 +53,23 @@ public class Shell {
             }
             else if (getCommand(commandLine).equals("add")) {
                 AddCommand command= new AddCommand(catalog, this.commandLine);
-                command.executeCommand();
+                command.executeCommand(catalog);
             }
             else if (getCommand(commandLine).equals("list")) {
                 ListCommand command= new ListCommand(catalog, this.commandLine);
-                command.executeCommand();
+                command.executeCommand(catalog);
             }
             else if (getCommand(commandLine).equals("save")) {
                 ListCommand command= new ListCommand(catalog, this.commandLine);
-                command.executeCommand();
+                command.executeCommand(catalog);
             }
             else if (getCommand(commandLine).equals("play")) {
                 PlayCommand command= new PlayCommand(catalog, this.commandLine);
-                command.executeCommand();
+                command.executeCommand(catalog);
             }
             else if (getCommand(commandLine).equals("load")) {
                 LoadCommand command= new LoadCommand(catalog, this.commandLine);
-                command.executeCommand();
+                command.executeCommand(catalog);
             }
 
         }
