@@ -46,7 +46,7 @@ public class Book extends Item {
 
     @Override
     public String toString() {
-        return  "Movie name: " + name + "\n Author:  " + author + "\n Description: " + description + "\n Release year: " +  releaseYear +  "\nPath: ["+ this.path +"]";
+        return  "Book name: " + name + "\n Author:  " + author + "\n Description: " + description + "\n Release year: " +  releaseYear +  "\nPath: ["+ this.path +"]";
     }
 
 }

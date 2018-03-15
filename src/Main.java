@@ -10,7 +10,7 @@ public class Main {
 
 
         Catalog catalog = Catalog.getInstance();
-        Song sg = new Song("song1", "song.mp3", 2016);
+        Song sg = new Song("song1", "/home/stefan/IdeaProjects/Document-Management-System/src/song.mp3", 2016);
 
         //sg.open();
 
@@ -22,9 +22,15 @@ public class Main {
 
         catalog.list();
 
+        sg.open();
+
+        System.out.print(sg.getMetaData());
+
         catalog.save("catalog1.dat");
 
         Shell sh = new Shell();
+
+
 
     }
 }

@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public abstract class Command {
     protected String command;
-    protected  int commandSize;
+    protected int commandSize;
 
     public Command(String command){
         this.command=command;
