@@ -3,25 +3,17 @@ package Model;
 import java.io.*;
 import java.util.*;
 
-public class Catalog implements Serializable  {
+public class Catalog implements Serializable {
 
-    private static Catalog instance = null;
 
-    public static Catalog getInstance(){
-        if(instance == null) {
-            instance = new Catalog();
-        }
-        return instance;
-    }
+    private Map<String, Item> items;
 
-    private Map<String,Item> items;
-
-    protected Catalog() {
-        this.items = new LinkedHashMap<String,Item>();
+    public Catalog() {
+        this.items = new LinkedHashMap<String, Item>();
     }
 
     public void add(Item item) {
-        this.items.put(item.getName(),item);
+        this.items.put(item.getName(), item);
     }
 
     public void list() {
@@ -30,23 +22,23 @@ public class Catalog implements Serializable  {
     }
 
     public boolean contains(String toSearch) {
-        if(items.containsKey(toSearch))
+        if (items.containsKey(toSearch))
             return true;
         return false;
     }
 
-    public Item search(String toSearch){
-        if(contains(toSearch))
+    public Item search(String toSearch) {
+        if (contains(toSearch))
             return items.get(toSearch);
         return null;
     }
 
-    public void remove(String toSearch){
-        if(contains(toSearch))
+    public void remove(String toSearch) {
+        if (contains(toSearch))
             items.remove(toSearch);
     }
 
-    public void clear(String toSearch){
+    public void clear(String toSearch) {
         items.clear();
     }
 
@@ -61,15 +53,16 @@ public class Catalog implements Serializable  {
         }
     }
 
-    public void load(String path) {
+    public static Catalog load(String path) {
         try {
             FileInputStream fin = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fin);
-            Catalog cat = (Catalog) ois.readObject();
-            this.items = cat.items;
+            return (Catalog) ois.readObject();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return null;
+
     }
 
 }

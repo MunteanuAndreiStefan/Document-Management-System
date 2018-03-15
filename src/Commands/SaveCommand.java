@@ -8,7 +8,7 @@ import java.util.Vector;
 public class SaveCommand extends Command {
     Catalog catalog;
     Vector<String> args;
-    public SaveCommand(Catalog catalog, String command)
+    public SaveCommand(String command)
     {
         super("save");
         this.catalog=catalog;
@@ -16,7 +16,7 @@ public class SaveCommand extends Command {
 
     }
     @Override
-    public void executeCommand() {
-        this.catalog.save(args.get(1));
+    public void executeCommand(Catalog cat) {
+        catalog=cat;
     }
 }

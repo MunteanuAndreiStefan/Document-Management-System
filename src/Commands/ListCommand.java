@@ -6,14 +6,13 @@ import Model.Catalog;
 public class ListCommand extends Command {
 
     Catalog catalog;
-    public ListCommand(Catalog catalog, String command) {
+    public ListCommand(String command) {
         super(command);
-        this.catalog=catalog;
     }
 
     @Override
-    public void executeCommand() {
-        this.catalog.list();
+    public void executeCommand(Catalog cat) {
+        catalog=cat;
     }
 
 

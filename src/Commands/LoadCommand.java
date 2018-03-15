@@ -10,7 +10,7 @@ public class LoadCommand extends Command {
         super("");
     }
     @Override
-    public void executeCommand() {
-        Catalog.getInstance().list();
+    public void executeCommand(Catalog cat) {
+        cat.list();
     }
 }

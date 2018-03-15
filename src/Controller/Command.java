@@ -1,6 +1,7 @@
 package Controller;
 
 import java.util.Vector;
+import Model.*;
 
 public abstract class Command {
     protected String command;
@@ -18,7 +19,7 @@ public abstract class Command {
         commandSize=getCommandSize(command);
     }
 
-    public abstract void executeCommand();
+    public abstract void executeCommand(Catalog cat);
 
 
     public int getCommandSize(String command) {
